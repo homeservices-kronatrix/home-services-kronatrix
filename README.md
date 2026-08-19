@@ -1,35 +1,18 @@
-# KRONATRIX Home Services — FLAT GitHub Upload Package
+# KRONATRIX Home Services — Version 2
 
-Prepared: 19 August 2026
-Target repository: homeservices-kronatrix/home-services-kronatrix
-Target domain: https://homeservices.kronatrix.co.uk/
+Flat-file GitHub Pages build for `homeservices.kronatrix.co.uk`.
 
-## Upload method
+## Architecture
+KRONATRIX → Home Services → Custom Swimming Pools.
 
-All production files in this folder are deliberately FLAT: there are no subfolders.
-Select every file in this folder and upload them together to the ROOT of the GitHub repository.
+## Version 2 changes
+- Commercial-first Home Services homepage.
+- Stronger KRONATRIX parent-brand linking.
+- 10 priority swimming-pool decision topics based on fresh UK Keyword Planner research.
+- Original SVG decision-support visuals.
+- Pool-business marketing / SEO / AI-visibility conversion page.
+- Verified Hardinge Road L19 case study retained with evidence boundaries.
+- No invented pool-client results, prices, rankings or testimonials.
+- No analytics tag until a confirmed measurement/consent decision is supplied.
 
-Do NOT upload the ZIP itself to GitHub. Extract it first, then upload all files inside the folder.
-
-## Why the clean URLs still work
-
-The content pages are flat source files, but each HTML file contains Jekyll `permalink` front matter. GitHub Pages builds the intended public paths, including:
-
-- /custom-swimming-pools/
-- /custom-swimming-pools/cost/
-- /custom-swimming-pools/pool-types/
-- /custom-swimming-pools/construction-installation/
-- /custom-swimming-pools/planning-permission/
-- /custom-swimming-pools/pool-business-visibility/
-- /case-studies/hardinge-road-l19/
-- /about/
-- /contact/
-- /privacy/
-
-This preserves the agreed KRONATRIX → Home Services → Custom Swimming Pools architecture while allowing one flat upload.
-
-## Important
-
-Do not add a `.nojekyll` file. GitHub Pages/Jekyll must process the permalink front matter.
-The CNAME file is already set to `homeservices.kronatrix.co.uk`.
-No Google Analytics tag has been added yet, because measurement/privacy configuration is still to be verified.
+Upload all files to repository root and replace the current V1 files. GitHub Pages source remains `main / (root)`.

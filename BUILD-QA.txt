@@ -1,13 +1,12 @@
-KRONATRIX HOME SERVICES — FLAT UPLOAD QA
-Prepared: 19 August 2026
+KRONATRIX HOME SERVICES V2 — BUILD QA
+Date: 19 August 2026
+HTML pages: 18
+Sitemap URLs: 17
+Total files: 41
+Flat root files: YES
+Files > 50: NO
+Blocking static QA issues: 0
 
-Flat files: 22
-HTML source pages: 12
-Subfolders: 0
-Maximum files in upload folder: 22 (under requested 50-file limit)
+PASS: titles, descriptions, canonicals, H1s and known local asset/link targets checked.
 
-Architecture preservation method: GitHub Pages/Jekyll permalink front matter.
-Target domain: https://homeservices.kronatrix.co.uk/
-
-QA issues found: 0
-No blocking flat-package QA issues found.
+Manual live QA still required after upload: GitHub Pages build, mobile navigation, HTTPS, custom domain, page rendering, browser console, structured data, Search Console/Bing, accessibility and performance.
