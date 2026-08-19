@@ -410,3 +410,39 @@ main section:not(.hero):not(.section-white):not(.section-tint):not(.final-cta-se
   }
 }
 
+/* =========================================================
+   KRONATRIX HOME SERVICES V4.3 — LIGHT-BACKGROUND CONTRAST
+   Lighthouse accessibility fix: cyan labels on white/tint.
+   ========================================================= */
+
+:root{
+  --cyan-on-light:#00789e;
+}
+
+/* Keep the bright KRONATRIX cyan on dark brand/hero/CTA areas,
+   but use an accessible brand-adjacent cyan on light sections. */
+.section-white .eyebrow,
+.section-white .kicker,
+.section-tint .eyebrow,
+.section-tint .kicker,
+.page-intro .eyebrow,
+.page-intro .kicker,
+.case-evidence-section .eyebrow,
+.case-evidence-section .kicker,
+.proof-layout .eyebrow,
+.proof-layout .kicker{
+  color:var(--cyan-on-light);
+}
+
+/* Explicitly preserve the brighter neon cyan where contrast is strong. */
+.hero .eyebrow,
+.hero .kicker,
+.cta .eyebrow,
+.cta .kicker,
+.final-cta .eyebrow,
+.final-cta .kicker,
+.signal-panel .eyebrow,
+.signal-panel .kicker{
+  color:var(--cyan);
+}
+
