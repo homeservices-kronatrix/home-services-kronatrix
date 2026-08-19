@@ -1,0 +1,8 @@
+title: "KRONATRIX Home Services"
+url: "https://homeservices.kronatrix.co.uk"
+baseurl: ""
+timezone: "Europe/London"
+markdown: kramdown
+exclude:
+  - README.md
+  - BUILD-QA.txt

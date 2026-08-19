@@ -1,0 +1,13 @@
+KRONATRIX HOME SERVICES — FLAT UPLOAD QA
+Prepared: 19 August 2026
+
+Flat files: 22
+HTML source pages: 12
+Subfolders: 0
+Maximum files in upload folder: 22 (under requested 50-file limit)
+
+Architecture preservation method: GitHub Pages/Jekyll permalink front matter.
+Target domain: https://homeservices.kronatrix.co.uk/
+
+QA issues found: 0
+No blocking flat-package QA issues found.

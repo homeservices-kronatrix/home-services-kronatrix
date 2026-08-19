@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://homeservices.kronatrix.co.uk/sitemap.xml
