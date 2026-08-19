@@ -77,10 +77,6 @@
     }
   });
 
-  /* KRONATRIX GA4
-     Shared KRONATRIX property.
-     Basic consent: Google Analytics does not load until the visitor allows analytics.
-     Advertising storage/user-data/personalisation remain denied. */
   const GA_MEASUREMENT_ID = 'G-HVE7XRLZEP';
   const ANALYTICS_CHOICE_KEY = 'kronatrix_home_services_analytics_choice';
   let analyticsLoaded = false;
@@ -122,7 +118,6 @@
 
   const setAnalyticsChoice = (choice) => {
     try { localStorage.setItem(ANALYTICS_CHOICE_KEY, choice); } catch (_) {}
-
     if (choice === 'granted') {
       loadAnalytics();
     } else {
@@ -193,8 +188,6 @@
   if (existingChoice !== 'granted' && existingChoice !== 'denied') showAnalyticsPanel();
   addAnalyticsSettingsControl();
 
-  /* Conversion-oriented CTA events only.
-     No email address, email message, form text or other user-entered personal data is sent. */
   document.addEventListener('click', (event) => {
     if (!analyticsLoaded) return;
 
@@ -202,23 +195,55 @@
     if (!link) return;
 
     const href = link.getAttribute('href') || '';
-    const common = { page_path: window.location.pathname };
+    const eventNames = [];
 
     if (href.startsWith(`mailto:${HOME_SERVICES_EMAIL}`)) {
-      window.gtag('event', 'home_services_email_click', common);
+      eventNames.push('home_services_email_click');
     }
 
-    if (link.classList.contains('nav-cta') || href.includes('visibility%20review')) {
-      window.gtag('event', 'visibility_review_click', common);
+    if (link.classList.contains('nav-cta') || href.toLowerCase().includes('visibility%20review')) {
+      eventNames.push('visibility_review_click');
     }
 
     if (href.includes('/custom-swimming-pools/pool-business-visibility/')) {
-      window.gtag('event', 'pool_business_visibility_click', common);
+      eventNames.push('pool_business_visibility_click');
     }
 
     if (href.startsWith('https://hardinge-road-l19.github.io/')) {
-      window.gtag('event', 'proof_live_site_click', common);
+      eventNames.push('proof_live_site_click');
     }
+
+    if (!eventNames.length) return;
+
+    const modifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+    const opensNewTab = (link.getAttribute('target') || '').toLowerCase() === '_blank';
+    const shouldDelayNavigation = !modifiedClick && !opensNewTab;
+
+    let completed = 0;
+    let navigated = false;
+
+    const continueNavigation = () => {
+      if (!shouldDelayNavigation || navigated) return;
+      navigated = true;
+      window.location.href = link.href;
+    };
+
+    if (shouldDelayNavigation) {
+      event.preventDefault();
+      window.setTimeout(continueNavigation, 900);
+    }
+
+    eventNames.forEach((name) => {
+      window.gtag('event', name, {
+        page_path: window.location.pathname,
+        send_to: GA_MEASUREMENT_ID,
+        event_timeout: 800,
+        event_callback: () => {
+          completed += 1;
+          if (completed >= eventNames.length) continueNavigation();
+        }
+      });
+    });
   });
 
 })();
