@@ -446,3 +446,47 @@ main section:not(.hero):not(.section-white):not(.section-tint):not(.final-cta-se
   color:var(--cyan);
 }
 
+/* =========================================================
+   KRONATRIX HOME SERVICES V4.4 — READABILITY POLISH
+   Darker light-background copy for clearer reading on all devices.
+   ========================================================= */
+
+:root{
+  --muted:#3f5570;
+  --cyan-on-light:#005f7d;
+}
+
+/* Direct-answer boxes need to read as strongly as the surrounding page. */
+.answer{
+  color:#294866;
+  background:#f2f8ff;
+}
+.answer strong{
+  color:#071226;
+}
+
+/* Improve secondary text clarity on light sections. */
+.topic-link em,
+.breadcrumbs,
+.breadcrumbs a,
+.research-banner,
+.sources,
+td,
+.case-project-image figcaption{
+  color:#3f5570;
+}
+
+/* Stronger small editorial labels on white/tinted sections. */
+.section-white .eyebrow,
+.section-white .kicker,
+.section-tint .eyebrow,
+.section-tint .kicker,
+.page-intro .eyebrow,
+.page-intro .kicker,
+.case-evidence-section .eyebrow,
+.case-evidence-section .kicker,
+.proof-layout .eyebrow,
+.proof-layout .kicker{
+  color:#005f7d;
+}
+
